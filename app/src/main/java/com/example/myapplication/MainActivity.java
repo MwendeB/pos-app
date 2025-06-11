@@ -14,7 +14,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-Button list,calculator;
+Button list,calculator,pos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ Button list,calculator;
         setContentView(R.layout.activity_main);
         list = findViewById(R.id.List_button);
         calculator = findViewById(R.id.Calculator_button);
+        pos = findViewById(R.id.pos);
 
         list.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +37,13 @@ Button list,calculator;
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Calculator.class);
+                startActivity(intent);
+            }
+        });
+        pos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PointOfSale.class);
                 startActivity(intent);
             }
         });
